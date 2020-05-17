@@ -8,6 +8,7 @@ dictionary = {
     "population_type": ["<1,000,000", "<3,000,000", "<6,000,000", "<10,000,000", "<15,000,000", ">15,000,000"],
     "population_per_acre": ["<10", "<30", "<100", "<1000", "<3000", "<10,000"],
 
+    # Population per acre for different types of population
     "population_per_acre_dict":
         {"<1,000,000": "<10", "<3,000,000": "<30","<6,000,000":"<100", "<10,000,000": "<1000", "<15,000,000": "<3000",
          ">15,000,000": "<10,000"},
@@ -36,17 +37,16 @@ dictionary = {
     "infection_states": # Rate at which the state can infect others
         {'normal':0, 'exposed':0.5, 'infectious':1, 'sick':1, 'byPerson_try1':0.1, 'ICU':0.05, 'recovered':0, 'dead':0},
 
+    # probablity of a state being a certain type. Ex: state normal and type death is 0
     "states_to_type":
         {
-            "normal": {'asymptomatic': -1, 'minor':-1, 'hosptial':-1, 'ICU':-1, 'death':-1,  'no_hospital_recover':-1, 'no_hospital_die': -1 },
-            "exposed": {'asymptomatic': 5, 'minor':5, 'hosptial':-1, 'ICU':-1, 'death':-1,  'no_hospital_recover':-1, 'no_hospital_die': -1 },
-            "infectious": {'asymptomatic': 5, 'minor':5, 'hosptial':-1, 'ICU':-1, 'death':-1,  'no_hospital_recover':-1, 'no_hospital_die': -1 },
-            "sick": {'asymptomatic': -1, 'minor':5, 'byPerson_try1': 5, 'ICU':5, 'death':-1,  'no_hospital_recover':5, 'no_hospital_die': 5 },
-            "byPerson_try1": {'asymptomatic': -1, 'minor':-1, 'hosptial':10, 'ICU':5, 'death':5,  'no_hospital_recover':-1, 'no_hospital_die': 10 },
-            "ICU": {'asymptomatic': -1, 'minor':-1, 'hosptial':-1, 'ICU':10, 'death':5,  'no_hospital_recover':-1, 'no_hospital_die': 10 },
-            "recovered": {'asymptomatic': 5, 'minor':5, 'hosptial':-1, 'ICU':-1, 'death':-1,  'no_hospital_recover':10, 'no_hospital_die': -1 },
-            "dead": {'asymptomatic': -1, 'minor':-1, 'hosptial':-1, 'ICU':-1, 'death':10,  'no_hospital_recover':-1, 'no_hospital_die': 10 },
+            "normal": {'asymptomatic': 0, 'minor':0, 'hosptial':0, 'ICU':0, 'death':0,  'no_hospital_recover':0, 'no_hospital_die': 0 },
+            "exposed": {'asymptomatic': 0.5, 'minor':0.5, 'hosptial':0, 'ICU':0, 'death':0,  'no_hospital_recover':0, 'no_hospital_die': 0 },
+            "infectious": {'asymptomatic': 0.5, 'minor':0.5, 'hosptial':0, 'ICU':0, 'death':0,  'no_hospital_recover':0, 'no_hospital_die': 0 },
+            "sick": {'asymptomatic': 0, 'minor':0.5, 'byPerson_try1': 0.5, 'ICU':0.5, 'death':0,  'no_hospital_recover':0.5, 'no_hospital_die': 0.5 },
+            "byPerson_try1": {'asymptomatic': 0, 'minor':0, 'hosptial':1, 'ICU':0.5, 'death':0.5,  'no_hospital_recover':0, 'no_hospital_die': 1 },
+            "ICU": {'asymptomatic': 0, 'minor':0, 'hosptial':0, 'ICU':1, 'death':0.5,  'no_hospital_recover':0, 'no_hospital_die': 1 },
+            "recovered": {'asymptomatic': 0.5, 'minor':0.5, 'hosptial':0, 'ICU':0, 'death':0,  'no_hospital_recover':1, 'no_hospital_die': 0 },
+            "dead": {'asymptomatic': 0, 'minor':0, 'hosptial':0, 'ICU':0, 'death':1,  'no_hospital_recover':0, 'no_hospital_die': 1 },
         },
 }
-
-

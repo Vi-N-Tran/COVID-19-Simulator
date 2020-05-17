@@ -47,6 +47,3 @@ class Person:
             return 2
         if age < 30:
             return 3
-
-
-

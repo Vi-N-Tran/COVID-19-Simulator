@@ -7,11 +7,11 @@ class Hospital:
         self.no_hospital_death_rate = 0.25  # Arbitrary guess -------------> Need to fix
         self.states_to_type = dictionary["states_to_type"]
 
-    # Need to edit to switch to calculating for states
+    # Need to edit to switch to calculating for states -----------------> fix
     def process(self, State):  # pass an infection group
         hcases = float(State.get_num_in_conditions(['byPerson_try1', 'ICU']))  # how many in byPerson_try1
         total = float(State.total_initial_people())
-        if hcases > total * self.hospitals:  # too many peole to fit in hospita,
+        if hcases > total * self.hospitals:  # too many peole to fit in hospital,
             ratio = float(hcases) / float(total * self.hospitals) - 1.0  # multiplies numbers
             for n in range(0, State.numtypes):  # just randomly move over
                 if random.random() < ratio:  # move one
